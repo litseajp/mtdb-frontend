@@ -21,6 +21,18 @@ export interface ScaleDetails {
   tones: ScaleTone[]
 }
 
+export interface ChordInfo {
+  path: string
+  quality: string
+  name: string
+  description: string
+}
+
+export interface ChordCategory {
+  category: string
+  chords: ChordInfo[]
+}
+
 export interface DiagramTone {
   interval: string
   note: string
