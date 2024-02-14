@@ -1,12 +1,22 @@
 @import './base.css';
 
 /* Texts */
-h1, h2 {
+h1, h2, h3 {
   color: var(--text-primary-color);
-  font-weight: 500;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.625rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
 }
