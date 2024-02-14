@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <section id="chord-position-list" class="mt-8">
+  <section id="chord-position-list" class="mt-10">
     <h2>フォーム一覧</h2>
     <v-row class="ma-0">
       <ChordPositionListItem v-for="(position, i) in chord.positions" :key="i" :position="position" />

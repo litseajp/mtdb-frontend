@@ -8,7 +8,7 @@
 <template>
   <div>
     <h2>{{ chordCategory.category }}</h2>
-    <v-expansion-panels variant="accordion">
+    <v-expansion-panels variant="accordion" class="mt-1">
       <template v-for="chordInfo in chordCategory.chords" :key="chordInfo.path">
         <ChordListItem :chord-info="chordInfo" />
       </template>

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section id="scale-tone-list" class="mt-8">
+  <section id="scale-tone-list" class="mt-10">
     <h2>構成音一覧</h2>
     <ScaleToneTable />
   </section>

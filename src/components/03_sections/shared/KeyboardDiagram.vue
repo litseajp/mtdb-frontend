@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section id="keyboard-diagram" class="mt-8">
+  <section id="keyboard-diagram" class="mt-10">
     <h2>鍵盤図</h2>
     <KeyboardTable />
   </section>

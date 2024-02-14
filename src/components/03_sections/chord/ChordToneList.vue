@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section id="chord-tone-list" class="mt-8">
+  <section id="chord-tone-list" class="mt-10">
     <h2>構成音一覧</h2>
     <ChordToneTable />
   </section>

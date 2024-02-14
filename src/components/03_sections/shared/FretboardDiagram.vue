@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section id="fretboard-diagram" class="mt-8">
+  <section id="fretboard-diagram" class="mt-10">
     <h2>指板図</h2>
     <FretboardTable />
   </section>
