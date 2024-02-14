@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import { onMounted, ref } from 'vue'
+  import { onMounted, provide, ref } from 'vue'
   import { useRoute } from 'vue-router'
   import LoadingMessage from '@/components/03_sections/shared/LoadingMessage.vue'
   import PageDescription from '@/components/03_sections/shared/PageDescription.vue'
+  import ChordToneList from '@/components/03_sections/chord/ChordToneList.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ChordDetails } from '@/types/interfaces'
+  import { chordKey } from '@/types/injectionKeys'
   import { fetchChord } from '@/utils/fetch'
 
   const route = useRoute()
@@ -34,6 +36,8 @@
 
   onMounted(fetchData)
 
+  provide(chordKey, chord)
+
   const linkInfo = { path: '/chords', title: 'コード一覧' }
 </script>
 
@@ -44,6 +48,7 @@
   <template v-else-if="!error">
     <h1>{{ chord.name }}</h1>
     <PageDescription :text="chord.description" />
+    <ChordToneList />
     <BackwardLink :linkInfo="linkInfo" />
   </template>
   <template v-else>
