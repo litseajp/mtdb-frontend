@@ -19,3 +19,13 @@ export function mapKeyInterval(tones: DiagramTone[]): { [key: string]: string } 
 
   return keyToInterval
 }
+
+export function mapNoteInterval(tones: DiagramTone[]): { [key: string]: string } {
+  const noteToInterval: { [key: string]: string } = {}
+
+  tones?.forEach(tone => {
+    noteToInterval[normalizeEnharmonicNote(tone.note)] = tone.interval
+  })
+
+  return noteToInterval
+}

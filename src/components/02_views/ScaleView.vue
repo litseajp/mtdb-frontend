@@ -5,6 +5,7 @@
   import PageDescription from '@/components/03_sections/shared/PageDescription.vue'
   import ScaleToneList from '@/components/03_sections/scale/ScaleToneList.vue'
   import KeyboardDiagram from '@/components/03_sections/shared/KeyboardDiagram.vue'
+  import FretboardDiagram from '@/components/03_sections/shared/FretboardDiagram.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ScaleDetails } from '@/types/interfaces'
@@ -52,6 +53,7 @@
     <PageDescription :text="scale.description" />
     <ScaleToneList />
     <KeyboardDiagram />
+    <FretboardDiagram />
     <BackwardLink :linkInfo="linkInfo" />
   </template>
   <template v-else>
