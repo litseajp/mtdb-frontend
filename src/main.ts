@@ -3,6 +3,7 @@ import './assets/stylesheets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import axios from 'axios'
 
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
@@ -24,3 +25,5 @@ app.use(router)
 app.use(vuetify)
 
 app.mount('#app')
+
+axios.defaults.baseURL = 'http://localhost:3000'
