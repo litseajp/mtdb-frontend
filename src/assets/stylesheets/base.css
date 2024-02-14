@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Khand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap");
+
+:root {
+  --logo-color: #00bbff;
+  --text-primary-color: #505055;
+  --text-secondary-color: #707075;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
