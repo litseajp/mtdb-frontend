@@ -6,6 +6,7 @@
   import ChordToneList from '@/components/03_sections/chord/ChordToneList.vue'
   import KeyboardDiagram from '@/components/03_sections/shared/KeyboardDiagram.vue'
   import FretboardDiagram from '@/components/03_sections/shared/FretboardDiagram.vue'
+  import ChordPositionList from '@/components/03_sections/chord/ChordPositionList.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ChordDetails } from '@/types/interfaces'
@@ -54,6 +55,7 @@
     <ChordToneList />
     <KeyboardDiagram />
     <FretboardDiagram />
+    <ChordPositionList />
     <BackwardLink :linkInfo="linkInfo" />
   </template>
   <template v-else>

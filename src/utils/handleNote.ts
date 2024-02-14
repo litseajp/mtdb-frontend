@@ -1,4 +1,5 @@
 import { chromaticNoteList } from '@/constants/noteLists'
+import type { ChordPosition } from '@/types/interfaces'
 
 function normalizeEnharmonicNoteWithDoubleSharp(note: string): string {
   if (note.slice(0, 1) === 'b') {
@@ -50,4 +51,21 @@ export function calculateSemitoneDistance(note1: string, note2: string): number 
   const notesFromTonic = notesx2.slice(note1Index)
   
   return notesFromTonic.indexOf(note2Enharmonic)
+}
+
+export function calculateFirstFretNumber(position: ChordPosition):number {
+  let minFretNum = 99
+  let maxFretNum = 0
+
+  for (const fretNum of Object.values(position)) {
+    if (fretNum > 0 && fretNum < minFretNum) {
+      minFretNum = fretNum
+    }
+
+    if (fretNum > maxFretNum) {
+      maxFretNum = fretNum
+    }
+  }
+
+  return (maxFretNum < 4) ? 0 : minFretNum - 1
 }
