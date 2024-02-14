@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <section id="tool-list" class="mt-12">
+  <section id="tool-list" class="mt-14">
     <div id="tool-list-container">
       <ToolListItem v-for="tool in toolList" :key="tool.path" :tool="tool" />
     </div>
