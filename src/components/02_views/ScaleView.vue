@@ -11,6 +11,7 @@
   import type { ScaleDetails } from '@/types/interfaces'
   import { scaleKey, tonesKey } from '@/types/injectionKeys'
   import { fetchScale } from '@/utils/fetch'
+  import { setMetaTitle } from '@/utils/handleTag'
 
   const route = useRoute()
   const scaleParam = route.params.scale as string
@@ -23,6 +24,7 @@
   const fetchData = async() => {
     try {
       scale.value = await fetchScale(scaleParam, tonicParam)
+      setMetaTitle(scale.value.name)
     } catch (e: any) {
       error.value = true
 

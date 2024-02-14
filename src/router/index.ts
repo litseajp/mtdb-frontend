@@ -17,7 +17,8 @@ const router = createRouter({
       children: [
         {
           path: '',
-          component: ScalesView
+          component: ScalesView,
+          meta: { title: 'スケール一覧' }
         },
         {
           path: ':scale',
@@ -30,7 +31,8 @@ const router = createRouter({
       children: [
         {
           path: '',
-          component: ChordsView
+          component: ChordsView,
+          meta: { title: 'コード一覧' }
         },
         {
           path: ':chord',
