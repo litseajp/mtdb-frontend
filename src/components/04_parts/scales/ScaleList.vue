@@ -8,7 +8,7 @@
 <template>
   <div>
     <h2>{{ scaleCategory.category }}</h2>
-    <v-expansion-panels variant="accordion">
+    <v-expansion-panels variant="accordion" class="mt-1">
       <template v-for="scaleInfo in scaleCategory.scales" :key="scaleInfo.path">
         <ScaleListItem :scale-info="scaleInfo" />
       </template>
