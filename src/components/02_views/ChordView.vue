@@ -12,6 +12,7 @@
   import type { ChordDetails } from '@/types/interfaces'
   import { chordKey, tonesKey } from '@/types/injectionKeys'
   import { fetchChord } from '@/utils/fetch'
+  import { setMetaTitle } from '@/utils/handleTag'
 
   const route = useRoute()
   const chordParam = route.params.chord as string
@@ -24,6 +25,7 @@
   const fetchData = async() => {
     try {
       chord.value = await fetchChord(chordParam, rootParam)
+      setMetaTitle(chord.value.name)
     } catch (e: any) {
       error.value = true
 

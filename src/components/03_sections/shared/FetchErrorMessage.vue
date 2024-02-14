@@ -1,4 +1,8 @@
 <script setup lang="ts">
+  import { onMounted } from 'vue'
+  import { setMetaTitle } from '@/utils/handleTag'
+
+  onMounted(() => setMetaTitle('通信エラー'))
 </script>
 
 <template>
