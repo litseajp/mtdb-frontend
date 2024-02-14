@@ -17,6 +17,15 @@ const vuetify = createVuetify({
   icons: {
     defaultSet: 'mdi',
   },
+  display: {
+    thresholds: {
+      xs: 0,
+      sm: 425,
+      md: 768,
+      lg: 960,
+      xl: 1280,
+    },
+  },
 })
 
 const app = createApp(App)
