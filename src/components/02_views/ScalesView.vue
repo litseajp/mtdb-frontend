@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref, onMounted } from 'vue'
+  import LoadingMessage from '@/components/03_sections/shared/LoadingMessage.vue'
   import ScaleCategoryList from '@/components/03_sections/scales/ScaleCategoryList.vue'
   import type { ScaleCategory } from '@/types/interfaces'
   import { fetchScales } from '@/utils/fetch'
@@ -24,7 +25,7 @@
 
 <template>
   <template v-if="loading">
-    LOADING
+    <LoadingMessage />
   </template>
   <template v-else-if="!error">
     <h1>スケール一覧</h1>
