@@ -2,6 +2,7 @@
   import { ref, onMounted } from 'vue'
   import LoadingMessage from '@/components/03_sections/shared/LoadingMessage.vue'
   import ScaleCategoryList from '@/components/03_sections/scales/ScaleCategoryList.vue'
+  import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ScaleCategory } from '@/types/interfaces'
   import { fetchScales } from '@/utils/fetch'
 
@@ -32,7 +33,7 @@
     <ScaleCategoryList :scale-categories="scaleCategories" />
   </template>
   <template v-else>
-    ERROR
+    <FetchErrorMessage />
   </template>
 </template>
 
