@@ -2,6 +2,7 @@
   import { onMounted, ref } from 'vue'
   import { useRoute } from 'vue-router'
   import LoadingMessage from '@/components/03_sections/shared/LoadingMessage.vue'
+  import PageDescription from '@/components/03_sections/shared/PageDescription.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ScaleDetails } from '@/types/interfaces'
@@ -42,6 +43,7 @@
   </template>
   <template v-else-if="!error">
     <h1>{{ scale.name }}</h1>
+    <PageDescription :text="scale.description" />
     <BackwardLink :linkInfo="linkInfo" />
   </template>
   <template v-else>
