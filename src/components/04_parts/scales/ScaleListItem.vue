@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import TonicSelector from '@/components/04_parts/shared/TonicSelector.vue'
   import type { ScaleInfo } from '@/types/interfaces'
 
   defineProps<{ scaleInfo: ScaleInfo }>()
@@ -12,6 +13,9 @@
         <span>{{ scaleInfo.description }}</span>
       </div>
     </v-expansion-panel-title>
+    <v-expansion-panel-text>
+      <TonicSelector :path="`/scales/${scaleInfo.path}`" />
+    </v-expansion-panel-text>
   </v-expansion-panel>
 </template>
 
