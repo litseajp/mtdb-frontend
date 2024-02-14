@@ -1,5 +1,5 @@
 import intervalDict from '@/constants/intervalDict'
-import type { ScaleTone } from '@/types/interfaces'
+import type { ScaleTone, ChordTone } from '@/types/interfaces'
 
 const symbols: { [key: string]: string } = { 'sharp': '♯', 'flat': '♭', 'doublesharp': '♯♯', 'doubleflat': '♭♭' }
 
@@ -29,4 +29,17 @@ export function formatScaleToneTableItems(tones: ScaleTone[]): ScaleToneTableIte
   })
 
   return scaleToneTableItems
+}
+
+export function formatChordToneTableItems(tones: ChordTone[]): ChordTone[] {
+  const chordToneTableItems: ChordTone[] = []
+
+  tones?.forEach(tone => {
+    chordToneTableItems.push({
+      interval: intervalDict[tone.interval],
+      note: formatNote(tone.note)
+    })
+  })
+
+  return chordToneTableItems
 }
