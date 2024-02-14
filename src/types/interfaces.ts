@@ -8,3 +8,15 @@ export interface ScaleCategory {
   category: string
   scales: ScaleInfo[]
 }
+
+export interface ScaleTone {
+  interval: string
+  note: string
+  tonetype: string
+}
+
+export interface ScaleDetails {
+  name: string
+  description: string
+  tones: ScaleTone[]
+}
