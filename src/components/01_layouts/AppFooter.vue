@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-footer height="60">
+  <v-footer height="72">
     <address>
       © {{ currentYear }} - Litsea All rights reserved.
     </address>
