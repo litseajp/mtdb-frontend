@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import ToolNavigation from '@/components/04_parts/layouts/ToolNavigation.vue'
 </script>
 
 <template>
@@ -7,6 +8,7 @@
       <router-link id="app-bar-logo" to="/" class="ml-4">
         MusicTheoryDB
       </router-link>
+      <ToolNavigation />
     </div>
   </v-app-bar>
 </template>
@@ -15,6 +17,7 @@
   #app-bar-container {
     width: 100%;
     max-width: 960px;
+    display: flex;
   }
 
   #app-bar-logo {
