@@ -4,9 +4,9 @@
 <template>
   <v-app-bar absolute border flat height="60">
     <div id="app-bar-container" class="mx-auto">
-      <a id="app-bar-logo" class="ml-4">
+      <router-link id="app-bar-logo" to="/" class="ml-4">
         MusicTheoryDB
-      </a>
+      </router-link>
     </div>
   </v-app-bar>
 </template>
@@ -21,5 +21,6 @@
     color: var(--logo-color);
     font-family: "Khand", sans-serif;
     font-size: 36px;
+    text-decoration: none;
   }
 </style>
