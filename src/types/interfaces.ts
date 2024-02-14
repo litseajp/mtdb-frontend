@@ -20,3 +20,8 @@ export interface ScaleDetails {
   description: string
   tones: ScaleTone[]
 }
+
+export interface DiagramTone {
+  interval: string
+  note: string
+}
