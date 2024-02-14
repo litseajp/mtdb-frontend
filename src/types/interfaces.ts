@@ -33,6 +33,27 @@ export interface ChordCategory {
   chords: ChordInfo[]
 }
 
+export interface ChordTone {
+  interval: string
+  note: string
+}
+
+export interface ChordPosition {
+  string1: number
+  string2: number
+  string3: number
+  string4: number
+  string5: number
+  string6: number
+}
+
+export interface ChordDetails {
+  name: string
+  description: string
+  tones: ChordTone[]
+  positions: ChordPosition[]
+}
+
 export interface DiagramTone {
   interval: string
   note: string
