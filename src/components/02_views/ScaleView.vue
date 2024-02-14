@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import { onMounted, ref } from 'vue'
+  import { onMounted, provide, ref } from 'vue'
   import { useRoute } from 'vue-router'
   import LoadingMessage from '@/components/03_sections/shared/LoadingMessage.vue'
   import PageDescription from '@/components/03_sections/shared/PageDescription.vue'
+  import ScaleToneList from '@/components/03_sections/scale/ScaleToneList.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ScaleDetails } from '@/types/interfaces'
+  import { scaleKey } from '@/types/injectionKeys'
   import { fetchScale } from '@/utils/fetch'
 
   const route = useRoute()
@@ -34,6 +36,8 @@
 
   onMounted(fetchData)
 
+  provide(scaleKey, scale)
+
   const linkInfo = { path: '/scales', title: 'スケール一覧' }
 </script>
 
@@ -44,6 +48,7 @@
   <template v-else-if="!error">
     <h1>{{ scale.name }}</h1>
     <PageDescription :text="scale.description" />
+    <ScaleToneList />
     <BackwardLink :linkInfo="linkInfo" />
   </template>
   <template v-else>

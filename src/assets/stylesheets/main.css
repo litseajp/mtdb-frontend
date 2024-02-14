@@ -27,3 +27,12 @@ span.v-btn__content {
   font-size: 1rem;
   font-weight: 400;
 }
+
+tr.v-data-table__tr:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+
+th.v-data-table__th, td.v-data-table__td {
+  color: var(--text-primary-color);
+  font-size: 1.125rem;
+}
