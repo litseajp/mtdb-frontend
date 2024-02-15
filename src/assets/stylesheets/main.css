@@ -36,3 +36,9 @@ th.v-data-table__th, td.v-data-table__td {
   color: var(--text-primary-color);
   font-size: 1.125rem;
 }
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
