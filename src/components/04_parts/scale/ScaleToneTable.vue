@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <v-data-table :headers="headers" :items="items" density="comfortable">
+  <v-data-table :headers="headers" :items="items">
     <template #bottom />
   </v-data-table>
 </template>
@@ -24,5 +24,11 @@
 <style scoped>
   .v-data-table {
     width: 480px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .v-data-table {
+      width: 360px;
+    }
   }
 </style>
