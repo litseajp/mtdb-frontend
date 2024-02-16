@@ -25,7 +25,7 @@
   const fetchData = async() => {
     try {
       chord.value = await fetchChord(chordParam, rootParam)
-      setMetaTitle(chord.value.name)
+      setMetaTitle(chord.value.name.split(',')[0])
     } catch (e: any) {
       error.value = true
 
@@ -52,7 +52,10 @@
     <LoadingMessage />
   </template>
   <template v-else-if="!error">
-    <h1>{{ chord.name }}</h1>
+    <div class="text-center">
+      <h1>{{ chord.name.split(',')[0] }}</h1>
+      <span>{{ chord.name.split(',')[1] }}</span>
+    </div>
     <PageDescription :text="chord.description" />
     <ChordToneList />
     <KeyboardDiagram />
@@ -67,4 +70,14 @@
 </template>
 
 <style scoped>
+  span {
+    color: var(--text-secondary-color);
+    font-size: 1.125rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    span {
+      font-size: 0.875rem;
+    }
+  }
 </style>
