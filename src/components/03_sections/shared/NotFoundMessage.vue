@@ -8,7 +8,7 @@
 <template>
   <section id="not-found-message" class="text-center">
     <h1>404 Not Found</h1>
-    <p class="mt-8">
+    <p>
       ページが見つかりませんでした。
     </p>
   </section>
@@ -16,6 +16,14 @@
 
 <style scoped>
   p {
+    margin: 42px 0 72px 0;
     font-size: 1.25rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    p {
+      margin: 24px 0 48px 0;
+      font-size: 1.125rem;
+    }
   }
 </style>
