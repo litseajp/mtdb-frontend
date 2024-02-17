@@ -4,6 +4,7 @@
   import type { DiagramTone } from '@/types/interfaces'
   import { tonesKey } from '@/types/injectionKeys'
   import { mapNoteInterval } from '@/utils/map'
+  import { loadIntervalImage } from '@/utils/load'
 
   const tones = inject(tonesKey) as Ref<DiagramTone[]>
 
@@ -20,10 +21,10 @@
       <tr>
         <td v-for="i in 13" :key="i">
           <div v-if="isTone(fretboardNoteList[0][i - 1])" class="marker hi-e">
-            <img :src="`/src/assets/images/intervals/${noteIntervalMap[fretboardNoteList[0][i - 1]]}_white.png`" />
+            <img :src="loadIntervalImage(noteIntervalMap[fretboardNoteList[0][i - 1]], 'white')" />
           </div>
           <div v-if="isTone(fretboardNoteList[1][i - 1])" class="marker">
-            <img :src="`/src/assets/images/intervals/${noteIntervalMap[fretboardNoteList[1][i - 1]]}_white.png`" />
+            <img :src="loadIntervalImage(noteIntervalMap[fretboardNoteList[1][i - 1]], 'white')" />
           </div>
         </td>
       </tr>
@@ -33,7 +34,7 @@
           <div v-if="i == 2 && [3, 5, 7, 9].includes(j)" class="inlay" />
           <div v-if="i == 3 && j === 12" class="inlay" />
           <div v-if="isTone(note)" class="marker">
-            <img :src="`/src/assets/images/intervals/${noteIntervalMap[note]}_white.png`" />
+            <img :src="loadIntervalImage(noteIntervalMap[note], 'white')" />
           </div>
         </td>
       </tr>
