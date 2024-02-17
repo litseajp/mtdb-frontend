@@ -8,6 +8,7 @@
   import KeyboardDiagram from '@/components/03_sections/shared/KeyboardDiagram.vue'
   import FretboardDiagram from '@/components/03_sections/shared/FretboardDiagram.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
+  import NotFoundMessage from '@/components/03_sections/shared/NotFoundMessage.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
   import type { ScaleDetails } from '@/types/interfaces'
   import { scaleKey, tonesKey } from '@/types/injectionKeys'
@@ -24,6 +25,7 @@
   const scale = ref<ScaleDetails>({ name: '', description: '', tones: [] })
   const loading = ref(true)
   const error = ref(false)
+  const invalidParam = ref(false)
 
   const fetchData = async() => {
     try {
@@ -34,6 +36,7 @@
 
       if (e.response.data.error) {
         console.error(`ERROR: ${e.response.data.error}`)
+        invalidParam.value = true
       } else {
         console.error(e.message)
       }
@@ -62,6 +65,10 @@
     <KeyboardDiagram />
     <FretboardDiagram />
     <BackwardLink :linkInfo="linkInfo" />
+  </template>
+  <template v-else-if='invalidParam'>
+    <NotFoundMessage />
+    <BackwardLink />
   </template>
   <template v-else>
     <FetchErrorMessage />
