@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <section id="chord-position-list" class="mt-10">
+  <section id="chord-position-list">
     <h2>フォーム一覧</h2>
     <v-row class="ma-0">
       <ChordPositionListItem v-for="(position, i) in chord.positions" :key="i" :position="position" />
@@ -17,4 +17,13 @@
 </template>
 
 <style scoped>
+  #chord-position-list {
+    margin-top: 42px;
+  }
+
+  @media screen and (max-width: 767px) {
+    #chord-position-list {
+      margin-top: 24px;
+    }
+  }
 </style>

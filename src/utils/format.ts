@@ -43,3 +43,11 @@ export function formatChordToneTableItems(tones: ChordTone[]): ChordTone[] {
 
   return chordToneTableItems
 }
+
+export function insertBreakBeforeBrackets(str: string): string {
+  return str.replace('（', '<br>（')
+}
+
+export function insertBreakForScaleName(str: string): string {
+  return str.length > 10 ? str.replace('スケール', '<br>スケール') : str
+}

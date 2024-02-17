@@ -157,20 +157,22 @@
 
 <style scoped>
   table {
+    width: 70%;
+    aspect-ratio: 3;
     border: solid 2px #333;
     border-collapse: collapse;
   }
 
   tr.upper {
-    height: 140px;
+    height: 66.6%;
   }
 
   tr.lower {
-    height: 70px;
+    height: 33.4%;
   }
 
   td {
-    width: 14px;
+    width: calc(100% / 42);
     position: relative;
     box-sizing: content-box;
     background-color: #aaa;
@@ -197,7 +199,7 @@
   }
 
   img {
-    width: 30px;
+    width: 200%;
     position: absolute;
     top: 42%;
     left: 50%;
@@ -209,5 +211,24 @@
     top: 55%;
     left: 0%;
     transform: none;
+  }
+
+  @media screen and (max-width: 599px) {
+    table {
+      width: 100%;
+      border: solid 1px #333;
+    }
+
+    td.black {
+      border-bottom: solid 1px #333;
+    }
+
+    td.border-left {
+      border-left: solid 1px #333;
+    }
+
+    td.border-right {
+      border-right: solid 1px #333;
+    }
   }
 </style>

@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <v-col cols="4" class="chord-position-list-item pa-0 pt-4">
+  <v-col class="chord-position-list-item">
     <table>
       <tr v-for="(fretNum, i) in Object.values(position).slice(1)" :key="fretNum">
         <td :class="{ 'zero-fret': startFretNum === 0 }">
@@ -38,31 +38,39 @@
 </template>
 
 <style scoped>
+  .v-col {
+    padding: 18px 1.5% 0 0;
+    flex: calc(100% / 3);
+    max-width: calc(100% / 3);
+  }
+
   table {
+    width: 100%;
+    aspect-ratio: 1.45;
     border-collapse: collapse;
   }
 
   tr {
-    height: 28px;
+    height: calc(77.5% / 5);
+  }
+
+  tr.fret-number {
+    height: 22.5%;
   }
 
   td {
-    width: 60px;
+    width: calc(84% / 4);
     border: solid 2px #333;
     position: relative;
   }
 
   td:first-child {
-    width: 50px;
+    width: 16%;
     border: none;
   }
 
   td.zero-fret {
     border-right: solid 8px #333;
-  }
-
-  tr.fret-number {
-    height: 42px;
   }
   
   tr.fret-number td {
@@ -74,8 +82,7 @@
   }
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 50%;
     position: absolute;
     top: 100%;
     left: 50%;
@@ -83,8 +90,8 @@
   }
 
   .marker {
-    width: 22px;
-    height: 22px;
+    width: 37.5%;
+    aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
     top: 100%;
@@ -96,5 +103,34 @@
 
   img.hi-e, .marker.hi-e {
     top: 0%;
+  }
+
+  @media screen and (max-width: 959px) {
+    .v-col {
+      padding-top: 1.75vw;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .v-col {
+      flex: calc(100% / 2);
+      max-width: calc(100% / 2);
+    }
+
+    table {
+      aspect-ratio: 1.5;
+    }
+
+    td {
+      border: solid 1px #333;
+    }
+
+    td.zero-fret {
+      border-right: solid 1.5vw #333;
+    }
+
+    tr.fret-number td {
+      font-size: 1rem;
+    }
   }
 </style>

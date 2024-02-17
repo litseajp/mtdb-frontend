@@ -6,7 +6,7 @@
 </script>
 
 <template>
-  <section id="chord-category-list" class="mt-8">
+  <section id="chord-category-list">
     <template v-for="chordCategory in chordCategories" :key="chordCategory.category">
       <ChordList :chord-category="chordCategory" class="chord-list" />
     </template>
@@ -14,7 +14,21 @@
 </template>
 
 <style scoped>
+  #chord-category-list {
+    margin-top: 42px;
+  }
+
   .chord-list:not(:first-child) {
     margin-top: 32px;
+  }
+
+  @media screen and (max-width: 767px) {
+    #chord-category-list {
+      margin-top: 24px;
+    }
+
+    .chord-list:not(:first-child) {
+      margin-top: 18px;
+    }
   }
 </style>

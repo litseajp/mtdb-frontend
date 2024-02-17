@@ -22,6 +22,14 @@ h3 {
 }
 
 /* Vuetify */
+.v-expansion-panel-title:not(.v-expansion-panel-title--static) {
+  min-height: 0px !important;
+}
+
+.v-expansion-panel-text__wrapper {
+  padding: 16px 16px 20px 16px !important;
+}
+
 span.v-btn__content {
   color: var(--text-primary-color);
   font-size: 1rem;
@@ -35,4 +43,43 @@ tr.v-data-table__tr:nth-child(odd) {
 th.v-data-table__th, td.v-data-table__td {
   color: var(--text-primary-color);
   font-size: 1.125rem;
+}
+
+.v-table--density-default {
+  --v-table-header-height: 48px !important;
+  --v-table-row-height: 42px !important;
+}
+
+@media screen and (max-width: 767px) {
+  /* Texts */
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  /* Vuetify */
+  .v-expansion-panel-text__wrapper {
+    padding: 8px 8px 12px 8px !important;
+  }
+
+  span.v-btn__content {
+    font-size: 0.75rem;
+  }
+
+  th.v-data-table__th, td.v-data-table__td {
+    font-size: 0.875rem;
+  }
+
+  .v-table--density-default {
+    --v-table-header-height: 36px !important;
+    --v-table-row-height: 32px !important;
+  }
 }

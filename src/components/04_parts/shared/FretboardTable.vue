@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <div id="fretboard" class="py-5">
+  <div id="fretboard">
     <table>
       <tr>
         <td v-for="i in 13" :key="i">
@@ -42,34 +42,35 @@
 </template>
 
 <style scoped>
+  #fretboard {
+    padding: 20px 0;
+  }
+
   table {
+    width: 100%;
+    aspect-ratio: 5;
     border-collapse: collapse;
   }
 
   tr {
-    height: 36px;
+    height: calc(100% / 6);
   }
 
   td {
-    width: 72px;
+    width: calc(94% / 12);
     border: solid 2px #333;
     position: relative;
   }
 
   td:first-child {
-    width: 48px;
+    width: 6%;
     border: none;
     border-right: solid 8px #333;
   }
 
-  img {
-    width: 30px;
-    height: 30px;
-  }
-
   .marker {
-    width: 30px;
-    height: 30px;
+    height: 87.5%;
+    aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
     top: 100%;
@@ -79,18 +80,59 @@
     background-color: #444;
   }
 
+  td:first-child .marker {
+    height: calc((100% - 2px) * 0.875);
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .marker.hi-e {
     top: 0%;
   }
 
   .inlay {
-    width: 16px;
-    height: 16px;
+    height: 45%;
+    aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #c5c5c5;
+  }
+
+  @media screen and (max-width: 959px) {
+    #fretboard {
+      padding: 1.875vw 0;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    #fretboard {
+      padding: 2.75vw 0;
+    }
+
+    table {
+      aspect-ratio: 3.5;
+    }
+
+    td {
+      border: solid 1px #333;
+    }
+
+    td:first-child {
+      border-right: solid 1.25vw #333;
+    }
+
+    .marker {
+      height: 85%;
+    }
   }
 </style>
