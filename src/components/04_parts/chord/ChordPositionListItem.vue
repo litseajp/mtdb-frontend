@@ -46,7 +46,7 @@
 
   table {
     width: 100%;
-    aspect-ratio: 1.45;
+    height: 200px;
     border-collapse: collapse;
   }
 
@@ -109,6 +109,10 @@
     .v-col {
       padding-top: 1.75vw;
     }
+
+    table {
+      height: 21vw;
+    }
   }
 
   @media screen and (max-width: 599px) {
@@ -118,7 +122,7 @@
     }
 
     table {
-      aspect-ratio: 1.5;
+      height: 32vw;
     }
 
     td {

@@ -48,8 +48,8 @@
   }
 
   table {
-    width: 100%;
-    aspect-ratio: 5;
+    width: 928px;
+    height: 186px;
     border-collapse: collapse;
   }
 
@@ -113,6 +113,11 @@
     #fretboard {
       padding: 1.875vw 0;
     }
+
+    table {
+      width: 100%;
+      height: 20vw;
+    }
   }
 
   @media screen and (max-width: 599px) {
@@ -121,7 +126,7 @@
     }
 
     table {
-      aspect-ratio: 3.5;
+      height: 27.5vw;
     }
 
     td {
