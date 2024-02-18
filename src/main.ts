@@ -35,4 +35,4 @@ app.use(vuetify)
 
 app.mount('#app')
 
-axios.defaults.baseURL = 'http://localhost:3000'
+axios.defaults.baseURL = '/api'
