@@ -191,6 +191,10 @@
     border-right: solid 2px #333;
   }
 
+  table, tr, td {
+    background-clip: padding-box;
+  }
+
   td.tone {
     background-color: #fff;
   }
