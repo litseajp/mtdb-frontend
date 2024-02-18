@@ -158,8 +158,8 @@
 
 <style scoped>
   table {
-    width: 70%;
-    aspect-ratio: 3;
+    width: 640px;
+    height: 210px;
     border: solid 2px #333;
     border-collapse: collapse;
   }
@@ -214,9 +214,17 @@
     transform: none;
   }
 
+  @media screen and (max-width: 959px) {
+    table {
+      width: 70%;
+      height: 22.5vw;
+    }
+  }
+
   @media screen and (max-width: 599px) {
     table {
       width: 100%;
+      height: 32vw;
       border: solid 1px #333;
     }
 
