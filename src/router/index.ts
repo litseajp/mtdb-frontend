@@ -4,6 +4,7 @@ import ScalesView from '@/components/02_views/ScalesView.vue'
 import ScaleView from '@/components/02_views/ScaleView.vue'
 import ChordsView from '@/components/02_views/ChordsView.vue'
 import ChordView from '@/components/02_views/ChordView.vue'
+import AvailableChordsIndex from '@/components/02_views/AvailableChordsIndex.vue'
 import NotFoundView from '@/components/02_views/NotFoundView.vue'
 
 const router = createRouter({
@@ -40,6 +41,11 @@ const router = createRouter({
           component: ChordView
         }
       ]
+    },
+    {
+      path: '/available-chords',
+      component: AvailableChordsIndex,
+      meta: { title: 'アヴェイラブルコード' }
     },
     {
       path: '/:pathMatch(.*)*',
