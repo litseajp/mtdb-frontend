@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/components/02_views/HomeView.vue'
-import ScalesView from '@/components/02_views/ScalesView.vue'
-import ScaleView from '@/components/02_views/ScaleView.vue'
-import ChordsView from '@/components/02_views/ChordsView.vue'
-import ChordView from '@/components/02_views/ChordView.vue'
+import ScalesIndex from '@/components/02_views/ScalesIndex.vue'
+import ScalesShow from '@/components/02_views/ScalesShow.vue'
+import ChordsIndex from '@/components/02_views/ChordsIndex.vue'
+import ChordsShow from '@/components/02_views/ChordsShow.vue'
 import AvailableChordsIndex from '@/components/02_views/AvailableChordsIndex.vue'
 import NotFoundView from '@/components/02_views/NotFoundView.vue'
 
@@ -19,12 +19,12 @@ const router = createRouter({
       children: [
         {
           path: '',
-          component: ScalesView,
+          component: ScalesIndex,
           meta: { title: 'スケール一覧' }
         },
         {
           path: ':scale',
-          component: ScaleView
+          component: ScalesShow
         }
       ]
     },
@@ -33,12 +33,12 @@ const router = createRouter({
       children: [
         {
           path: '',
-          component: ChordsView,
+          component: ChordsIndex,
           meta: { title: 'コード一覧' }
         },
         {
           path: ':chord',
-          component: ChordView
+          component: ChordsShow
         }
       ]
     },
