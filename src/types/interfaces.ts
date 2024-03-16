@@ -58,3 +58,14 @@ export interface DiagramTone {
   interval: string
   note: string
 }
+
+export interface KeyInfo {
+  path: string
+  name: string
+  diatonic: string[]
+}
+
+export interface KeyCategory {
+  category: string
+  keys: KeyInfo[]
+}
