@@ -69,3 +69,25 @@ export interface KeyCategory {
   category: string
   keys: KeyInfo[]
 }
+
+export interface ChordLink {
+  path: string
+  name: string
+}
+
+export interface AvailableChordDegree {
+  degree: string
+  function: string
+  root: string
+  chords: ChordLink[]
+}
+
+export interface AvailableChordCategory {
+  name: string
+  degrees: AvailableChordDegree[]
+}
+
+export interface AvailableChords {
+  key: string
+  categories: AvailableChordCategory[]
+}
