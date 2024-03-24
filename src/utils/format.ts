@@ -51,3 +51,7 @@ export function insertBreakBeforeBrackets(str: string): string {
 export function insertBreakForScaleName(str: string): string {
   return str.length > 10 ? str.replace('スケール', '<br>スケール') : str
 }
+
+export function formatMajminQuality(quality: string): string {
+  return quality === 'Maj' ? '' : quality === 'min' ? 'm' : quality
+}

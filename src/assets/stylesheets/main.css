@@ -36,11 +36,15 @@ span.v-btn__content {
   font-weight: 400;
 }
 
+.v-table.border-collapse table {
+  border-collapse: collapse;
+}
+
 tr.v-data-table__tr:nth-child(odd) {
   background-color: #f7f7f7;
 }
 
-th.v-data-table__th, td.v-data-table__td {
+.v-table th, td {
   color: var(--text-primary-color);
   font-size: 1.125rem;
 }

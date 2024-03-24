@@ -2,6 +2,7 @@
   import { onMounted, ref } from 'vue'
   import { useRoute } from 'vue-router'
   import LoadingMessage from '@/components/03_sections/shared/LoadingMessage.vue'
+  import AvailableChordCategoryList from '@/components/03_sections/available_chord/AvailableChordCategoryList.vue'
   import BackwardLink from '@/components/03_sections/shared/BackwardLink.vue'
   import NotFoundMessage from '@/components/03_sections/shared/NotFoundMessage.vue'
   import FetchErrorMessage from '@/components/03_sections/shared/FetchErrorMessage.vue'
@@ -46,6 +47,7 @@
   </template>
   <template v-else-if="!error">
     <h1>{{ availableChords.key }}のアヴェイラブルコード</h1>
+    <AvailableChordCategoryList :categories="availableChords.categories" />
     <BackwardLink :linkInfo="linkInfo" />
   </template>
   <template v-else-if='invalidParam'>
