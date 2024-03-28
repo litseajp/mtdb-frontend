@@ -61,4 +61,9 @@
 </template>
 
 <style scoped>
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: clamp(16px, 4.75vw, 24px);
+    }
+  }
 </style>

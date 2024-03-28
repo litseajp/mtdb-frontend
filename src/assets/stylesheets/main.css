@@ -44,7 +44,7 @@ tr.v-data-table__tr:nth-child(odd) {
   background-color: #f7f7f7;
 }
 
-.v-table th, td {
+.v-table th, .v-table td {
   color: var(--text-primary-color);
   font-size: 1.125rem;
 }

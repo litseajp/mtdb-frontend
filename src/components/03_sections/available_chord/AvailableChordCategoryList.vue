@@ -21,4 +21,14 @@
   .available-chord-degree-list:not(:first-child) {
     margin-top: 32px;
   }
+
+  @media screen and (max-width: 767px) {
+    #available-chord-category-list {
+      margin-top: 24px;
+    }
+
+    .available-chord-degree-list:not(:first-child) {
+      margin-top: 24px;
+    }
+  }
 </style>
