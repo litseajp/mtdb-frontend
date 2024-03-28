@@ -21,4 +21,14 @@
   .key-list:not(:first-child) {
     margin-top: 32px;
   }
+
+  @media screen and (max-width: 767px) {
+    #key-category-list {
+      margin-top: 24px;
+    }
+
+    .key-list:not(:first-child) {
+      margin-top: 18px;
+    }
+  }
 </style>
