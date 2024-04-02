@@ -6,10 +6,10 @@
 </script>
 
 <template>
-  <div id="tool-navigation" class="ml-8">
+  <div id="tool-navigation">
     <router-link
       v-for="(tool, index) in toolList" :key="tool.path" :to="tool.path"
-      :class="{ 'current-tool': route.path.includes(tool.path), 'ml-7': index !== 0 }"
+      :class="{ 'current-tool': route.path.includes(tool.path), 'ml-6': index !== 0 }"
     >
       {{ tool.name }}
     </router-link>
@@ -19,6 +19,7 @@
 <style scoped>
   #tool-navigation {
     height: inherit;
+    margin-left: 24px;
     display: flex;
     align-items: center;
   }
@@ -32,5 +33,11 @@
 
   a:hover, a.current-tool {
     color: var(--text-primary-color);
+  }
+
+  @media screen and (max-width: 959px) {
+    a {
+      font-size: 1rem;
+    }
   }
 </style>
